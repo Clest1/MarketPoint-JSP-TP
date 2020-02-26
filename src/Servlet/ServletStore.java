@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet(name = "ServletStore")
+@WebServlet("/")
 public class ServletStore extends HttpServlet {
 
     private static String getCookieValue( HttpServletRequest request, String nom ) {
@@ -33,7 +33,7 @@ public class ServletStore extends HttpServlet {
             request.setAttribute("name", "value");
             request.getRequestDispatcher("accueil.jsp").forward(request, response);
         }else{
-            this.getServletContext().getRequestDispatcher( "connexion.jsp" ).forward( request, response );
+            this.getServletContext().getRequestDispatcher( "/connexion.jsp" ).forward( request, response );
         }
     }
 }
