@@ -16,4 +16,12 @@ public class Panier extends ArrayList<Article> {
         this();
         this.idClient = idClient;
     }
+
+    public float totalValeur(){
+        float total = 0;
+        for(Article article : this) {
+            total += article.getPrixTTC();
+        }
+        return total;
+    }
 }

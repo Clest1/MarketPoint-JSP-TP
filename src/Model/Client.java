@@ -11,6 +11,7 @@ public class Client {
     int id;
     UUID token;
     boolean isAdmin;
+    Panier panier;
 
     public String getPseudo() {
         return pseudo;
@@ -28,6 +29,10 @@ public class Client {
         return id;
     }
 
+    public Panier getPanier() {
+        return panier;
+    }
+
     public boolean isAdmin() {
         return isAdmin;
     }
@@ -40,6 +45,10 @@ public class Client {
         return this.motDePasse == motDePasse;
     }
 
+    public void setToken(UUID token) {
+        this.token = token;
+    }
+
     private Client(){
         id = ++nbrClient;
         UUID token = null;
@@ -48,6 +57,7 @@ public class Client {
         pseudo = "XXXXX";
         motDePasse = "XXXXX";
         isAdmin = false;
+        panier = new Panier(id);
     }
     public Client(String nom, String prenom, String pseudo, String motDePasse) {
         this();
