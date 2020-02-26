@@ -11,12 +11,7 @@
     <title>Accueil</title>
 </head>
 <body>
-    <nav><a href="inscription.jsp">Index</a> <a href="connexion.jsp">Enregistrement</a> </nav>
-    <form action="connexion" method="POST">
-
-        <label for="nom"> nom </label>
-        <input type="number" dataSource="client.nom" id="nom"/>
-        <input type="submit" type="submit" />
-    </form>
+<jsp:include page="navBar.jsp"></jsp:include>
+    <div>ACCUEIL</div>
 </body>
 </html>

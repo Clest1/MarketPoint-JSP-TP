@@ -11,6 +11,6 @@
     <title>Panier</title>
 </head>
 <body>
-
+<jsp:include page="navBar.jsp"></jsp:include>
 </body>
 </html>

@@ -11,7 +11,7 @@
     <title>Accueil</title>
 </head>
 <body>
-    <jsp:include page="navBar.jsp">
+<jsp:include page="navBar.jsp"></jsp:include>
     <div>ACCUEIL</div>
 </body>
 </html>

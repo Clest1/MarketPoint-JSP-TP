@@ -11,8 +11,8 @@
     <title>Connexion</title>
 </head>
 <body>
-
-    <form action="connexion" method="POST">
+<jsp:include page="navBar.jsp"></jsp:include>
+    <form action="login" method="POST">
         <label for="pseudo"> Pseudonyme </label>
         <input type="text" dataSource="client.pseudo" id="pseudo"/><br/>
         <label for="motDePasse"> Mot de passe </label>
