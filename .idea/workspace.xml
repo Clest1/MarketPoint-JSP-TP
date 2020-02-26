@@ -6,16 +6,8 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6e75d343-1450-492c-9402-5a142e850456" name="Default Changelist" comment="Mise en place du projet">
-      <change afterPath="$PROJECT_DIR$/src/Servlet/ServletLogin.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Servlet/ServletStore.java" afterDir="false" />
+    <list default="true" id="6e75d343-1450-492c-9402-5a142e850456" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Servlet/Servlet_Accueil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Servlet/ServletRegister.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/Accueil.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/accueil.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/connexion.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/connexion.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/listeArticles.jsp" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -167,7 +159,7 @@
       <option name="presentableId" value="Default" />
       <updated>1582711336503</updated>
       <workItem from="1582711342444" duration="427000" />
-      <workItem from="1582711785459" duration="2895000" />
+      <workItem from="1582711785459" duration="2934000" />
     </task>
     <task id="LOCAL-00001" summary="Mise en place du projet">
       <created>1582712044529</created>
@@ -190,7 +182,14 @@
       <option name="project" value="LOCAL" />
       <updated>1582713599209</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Mise en place du projet">
+      <created>1582714710841</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1582714710841</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -217,10 +216,10 @@
       <screen x="62" y="0" width="1474" height="864" />
     </state>
     <state x="530" y="179" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/62.0.1474.864@62.0.1474.864" timestamp="1582713809319" />
-    <state x="423" y="27" key="CommitChangelistDialog2" timestamp="1582714701987">
+    <state x="423" y="27" key="CommitChangelistDialog2" timestamp="1582714716451">
       <screen x="62" y="0" width="1474" height="864" />
     </state>
-    <state x="423" y="27" key="CommitChangelistDialog2/62.0.1474.864@62.0.1474.864" timestamp="1582714701987" />
+    <state x="423" y="27" key="CommitChangelistDialog2/62.0.1474.864@62.0.1474.864" timestamp="1582714716451" />
     <state x="580" y="187" key="FileChooserDialogImpl" timestamp="1582713727494">
       <screen x="62" y="0" width="1474" height="864" />
     </state>
