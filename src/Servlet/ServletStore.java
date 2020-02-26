@@ -30,9 +30,10 @@ public class ServletStore extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String userToken = getCookieValue(request, "tokenUser");
         if(userToken != null){
-            // request.setAttribute("name", "value");
+            request.setAttribute("islogged", true);
             request.getRequestDispatcher("accueil.jsp").forward(request, response);
         }else{
+            request.setAttribute("islogged", false);
             this.getServletContext().getRequestDispatcher( "/connexion.jsp" ).forward( request, response );
         }
     }

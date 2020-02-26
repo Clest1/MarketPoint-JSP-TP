@@ -29,17 +29,18 @@ public class ServletLogin extends HttpServlet {
                 String randomUUIDString = userToken.toString();
                 Cookie cookie = new Cookie("tokenUser", randomUUIDString);
                 response.addCookie(cookie);
-
+                request.setAttribute("islogged", true);
                 this.getServletContext().getRequestDispatcher("/accueil.jsp").forward(request, response);
                 return;
             }
         }
-        request.setAttribute("errorMsg", "Message : " + pseudo + " " + password);
+        request.setAttribute("errorMsg", "Erreur : Login invalide");
         this.getServletContext().getRequestDispatcher("/connexion.jsp").forward(request, response);
         return;
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.setAttribute("islogged", false);
         this.getServletContext().getRequestDispatcher( "/connexion.jsp" ).forward( request, response );
     }
 }

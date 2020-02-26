@@ -22,11 +22,12 @@ public class ServletRegister extends HttpServlet {
         ArrayList<Client> listeClients = (ArrayList<Client>) getServletContext().getAttribute("listeClients");
         listeClients.add(client);
         getServletContext().setAttribute("listeClients",listeClients);
-
+        request.setAttribute("islogged", false);
         this.getServletContext().getRequestDispatcher("/connexion.jsp").forward(request, response);
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.setAttribute("islogged", false);
         this.getServletContext().getRequestDispatcher("/inscription.jsp").forward(request, response);
     }
 }

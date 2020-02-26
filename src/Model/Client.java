@@ -38,8 +38,8 @@ public class Client {
         return isAdmin;
     }
 
-    public boolean isTokenSame(UUID token) {
-        return this.token == token;
+    public boolean isTokenSame(String token) {
+        return this.token.toString() == token;
     }
 
     public boolean isPsswrdSame(String motDePasse) {
