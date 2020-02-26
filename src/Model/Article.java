@@ -9,7 +9,7 @@ public class Article {
     private int prixHT,tauxTVA;
     private long codeBarre;
     private String reference,libelle;
-    static final ArrayList<Integer> MAP_TVA = new ArrayList<>(Arrays.asList(550,2000));
+    public static final ArrayList<Integer> MAP_TVA = new ArrayList<>(Arrays.asList(550,2000));
 
     public int getPrixHT() {
         return prixHT;
@@ -27,7 +27,7 @@ public class Article {
         return libelle;
     }
 
-    public Article(int prixHT, int tauxTVA, long codeBarre, String reference, String libelle) {
+    public Article( String libelle, String reference, long codeBarre, int prixHT, int tauxTVA) {
         this.prixHT = prixHT;
         this.tauxTVA = tauxTVA;
         this.codeBarre = codeBarre;

@@ -3,6 +3,7 @@ package Listener;
 import Model.Article;
 import Model.Client;
 
+import javax.naming.Context;
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 import javax.servlet.annotation.WebListener;
@@ -24,12 +25,24 @@ public class Listener_startup implements ServletContextListener,
     // ServletContextListener implementation
     // -------------------------------------------------------
     public void contextInitialized(ServletContextEvent sce) {
-      /* This method is called when the servlet context is
-         initialized(when the Web application is deployed). 
+        /* This method is called when the servlet context is
+         initialized(when the Web application is deployed).
          You can initialize servlet context related data here.
-      */
+        */
+        // init the values
         ArrayList<Client> listeClients = new ArrayList<Client>();
         ArrayList<Article> listeArticles = new ArrayList<Article>();
+        // fill with values
+        listeClients.add(new Client("Giboulot","Gabriel","Clest1","1234Test"));
+        listeClients.add(new Client("Tuning","Jacky","Jackytuning","bass"));
+        listeClients.add(new Client("test","test","test","test"));
+
+        listeArticles.add(new Article("Jus d'orange","juiO",42315375,350,Article.MAP_TVA.get(0)));
+        listeArticles.add(new Article("eau de source","oS",54763252,100,Article.MAP_TVA.get(0)));
+        listeArticles.add(new Article("Ordinateur portable Atus","CompPAtus",53243252,140000,Article.MAP_TVA.get(1)));
+        // set this in the context
+        sce.getServletContext().setAttribute("listeClients", listeClients);
+        sce.getServletContext().setAttribute("listeArticles", listeArticles);
     }
 
     public void contextDestroyed(ServletContextEvent sce) {

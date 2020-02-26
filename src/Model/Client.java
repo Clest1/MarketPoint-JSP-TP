@@ -2,6 +2,7 @@ package Model;
 
 import java.util.ArrayList;
 import java.util.Map;
+import java.util.Objects;
 import java.util.UUID;
 
 public class Client {
@@ -42,7 +43,7 @@ public class Client {
     }
 
     public boolean isPsswrdSame(String motDePasse) {
-        return this.motDePasse == motDePasse;
+        return this.motDePasse.equals(motDePasse);
     }
 
     public void setToken(UUID token) {
@@ -59,6 +60,15 @@ public class Client {
         isAdmin = false;
         panier = new Panier(id);
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Client client = (Client) o;
+        return id == client.id || pseudo == client.pseudo;
+    }
+
     public Client(String nom, String prenom, String pseudo, String motDePasse) {
         this();
         this.nom = nom;
