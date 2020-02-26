@@ -28,7 +28,7 @@ public class ServletStore extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String userToken = getCookieValue(request, "token");
+        String userToken = getCookieValue(request, "tokenUser");
         if(userToken != null){
             // request.setAttribute("name", "value");
             request.getRequestDispatcher("accueil.jsp").forward(request, response);

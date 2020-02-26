@@ -12,5 +12,16 @@
 </head>
 <body>
 <jsp:include page="navBar.jsp"></jsp:include>
+<form action="login" method="POST">
+    <label for="pseudo"> nom </label>
+    <input type="text" dataSource="client.pseudo" id="nom" name="nom"/><br/>
+    <label for="password"> Prénom </label>
+    <input type="password" dataSource="client.motDePasse" id="prenom" name="prenom"/>
+    <label for="pseudo"> Pseudonyme </label>
+    <input type="text" dataSource="client.pseudo" id="pseudo" name="pseudo"/><br/>
+    <label for="password"> Mot de passe </label>
+    <input type="password" dataSource="client.motDePasse" id="password" name="password"/>
+    <input type="submit" type="submit" />
+</form>
 </body>
 </html>
