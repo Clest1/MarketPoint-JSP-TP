@@ -30,7 +30,7 @@ public class ServletStore extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String userToken = getCookieValue(request, "token");
         if(userToken != null){
-            request.setAttribute("name", "value");
+            // request.setAttribute("name", "value");
             request.getRequestDispatcher("accueil.jsp").forward(request, response);
         }else{
             this.getServletContext().getRequestDispatcher( "/connexion.jsp" ).forward( request, response );

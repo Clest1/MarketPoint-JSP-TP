@@ -11,11 +11,12 @@
     <title>Connexion</title>
 </head>
 <body>
-    <nav><a href="inscription.jsp">Index</a> <a href="connexion.jsp">Enregistrement</a> </nav>
-    <form action="connexion" method="POST">
 
-        <label for="nom"> nom </label>
-        <input type="number" dataSource="client.nom" id="nom"/>
+    <form action="connexion" method="POST">
+        <label for="pseudo"> Pseudonyme </label>
+        <input type="text" dataSource="client.pseudo" id="pseudo"/><br/>
+        <label for="motDePasse"> Mot de passe </label>
+        <input type="password" dataSource="client.motDePasse" id="motDePasse"/>
         <input type="submit" type="submit" />
     </form>
 </body>
