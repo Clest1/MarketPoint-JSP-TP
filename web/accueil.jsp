@@ -52,6 +52,36 @@
     </tbody>
 </table>
 
+<% if(user != null) if(user.isAdmin()){ %>
+<h2 style="margin-left: 30px;">Ajout d'un article</h2>
+<form  action="" method="POST" style=" width: 300px; margin-left: 30px;">
+    <div class="form-group">
+        <label for="libelle"> Libellé : </label>
+        <input type="text" class="form-control" dataSource="article.libelle" id="libelle" name="libelle"/><br>
+    </div>
+    <div class="form-group">
+        <label for="reference"> Référence : </label>
+        <input type="text" class="form-control" dataSource="article.reference" id="reference" name="reference"/><br>
+    </div>
+    <div class="form-group">
+        <label for="codeBarre"> Code-barre : </label>
+        <input type="number" class="form-control" dataSource="article.codeBarre" id="codeBarre" name="codeBarre"
+               maxlength="8" size="8" min="8"/><br>
+    </div>
+    <div class="form-group">
+        <label for="prixHT"> Prix HT : </label>
+        <input type="number" class="form-control" dataSource="article.prixHT" id="prixHT" name="prixHT"/><br>
+    </div>
+    <div class="form-group">
+        <label for="tauxTVA">Taux TVA</label>
+        <select class="form-control" id="tauxTVA" name="tauxTVA">
+            <option>5,5%</option>
+            <option>20%</option>
+        </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Ajouter</button>
+</form>
+<% } %>
 
 <div>
     <h3>Votre panier</h3>

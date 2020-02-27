@@ -30,7 +30,40 @@ public class ServletStore extends HttpServlet {
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String userToken = getCookieValue(request, "tokenUser");
+        Client user = null;
+        if(userToken != null) if(ServletLogin.searchClient(request,userToken) != null) {
+            request.setAttribute("islogged", true);
+            user = ServletLogin.searchClient(request, userToken);
+            if(!user.isAdmin()){
+                response.sendRedirect( (String) getServletContext().getAttribute("routeBase"));
+                return;
+            }
+        }
+        String libelle = request.getParameter("libelle");
+        String reference = request.getParameter("reference");
+        int codeBarre = Integer.parseInt(request.getParameter("codeBarre"));
+        int prixHT = Integer.parseInt(request.getParameter("prixHT"))*100;
+        String tauxTVAInput = request.getParameter("tauxTVA");
+        int tauxTVA = 0;
+        switch (tauxTVAInput){
+            case "5,5%":
+                tauxTVA = Article.MAP_TVA.get(0);
+                break;
+            case "20%":
+                tauxTVA = Article.MAP_TVA.get(1);
+                break;
+            default:
+                tauxTVA = Article.MAP_TVA.get(1);
+                break;
+        }
+        Article article = new Article(libelle,reference,codeBarre,prixHT,tauxTVA);
 
+
+        HashMap<Integer, Article> listeArticles = (HashMap<Integer, Article>) getServletContext().getAttribute("listeArticles");
+        listeArticles.put(codeBarre,article);
+        getServletContext().setAttribute("listeArticles",listeArticles);
+        response.sendRedirect( (String) getServletContext().getAttribute("routeBase"));
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
