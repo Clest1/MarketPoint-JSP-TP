@@ -11,7 +11,8 @@
 </head>
 <body>
 <jsp:include page="navBar.jsp"></jsp:include>
-<table class="table" style="width: 80%; ">
+<h1 style="margin-top: 30px; margin-left: 30px;">Liste des articles disponibles : </h1>
+<table class="table" style="width: 80%; margin-top: 30px; margin-left: 30px; ">
     <thead class="thead-dark">
     <tr>
         <th scope="col">Libellé</th>
