@@ -52,7 +52,6 @@ public class ServletStore extends HttpServlet {
             userPanier = ServletLogin.searchPanier(request,panierToken);
         }
         request.setAttribute("userPanier", userPanier);
-        request.setAttribute("listesArticles", getServletContext().getAttribute("listeArticles"));
         request.getRequestDispatcher("accueil.jsp").forward(request, response);
     }
 }

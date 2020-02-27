@@ -1,6 +1,8 @@
 <%@ page import="Model.Client" %>
 <%@ page import="java.util.ArrayList" %>
-<%@ page import="Model.Article" %><%--
+<%@ page import="Model.Article" %>
+<%@ page import="java.util.HashMap" %>
+<%@ page import="java.util.Map" %><%--
   Created by IntelliJ IDEA.
   User: Gabriel
   Date: 26/02/2020
@@ -18,10 +20,14 @@
 <h2>Liste articles</h2>
 <%
     Client userConnected = (Client) request.getAttribute( "user" );
-    ArrayList<Article> listeArticles = (ArrayList<Article>) request.getAttribute( "listeArticles" );
-%>
-<c:forEach items="${listeArticles}" var="article">
-    <jsp:include page="article.jsp"></jsp:include>
-</c:forEach>
+    HashMap<Integer, Article> listeArticles = (HashMap<Integer, Article>) request.getServletContext().getAttribute( "listeArticles" );
+    for (Article article : listeArticles.values()) { %>
+        <div>
+            <h4>libelle : <%=article.getLibelle()%></h4><br/>
+            <p>Ref : <%=article.getReference()%></p><br/>
+            <p>CB : <%=article.getCodeBarre()%></p><br/>
+            <p>prixTTC : <%=article.getPrixTTC()%>€</p>
+        </div>
+    <% } %>
 </body>
 </html>

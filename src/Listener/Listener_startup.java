@@ -13,6 +13,7 @@ import javax.servlet.http.HttpSessionEvent;
 import javax.servlet.http.HttpSessionListener;
 import javax.servlet.http.HttpSessionBindingEvent;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 @WebListener()
 public class Listener_startup implements ServletContextListener,
@@ -32,16 +33,17 @@ public class Listener_startup implements ServletContextListener,
         */
         // init the values
         ArrayList<Client> listeClients = new ArrayList<Client>();
-        ArrayList<Article> listeArticles = new ArrayList<Article>();
+        HashMap<Integer, Article> listeArticles = new HashMap<Integer, Article>();
         ArrayList<Panier> listePaniers = new ArrayList<Panier>();
+
         // fill with values
         listeClients.add(new Client("Giboulot","Gabriel","Clest1","1234Test"));
         listeClients.add(new Client("Tuning","Jacky","Jackytuning","bass"));
         listeClients.add(new Client("test","test","test","test"));
 
-        listeArticles.add(new Article("Jus d'orange","juiO",42315375,350,Article.MAP_TVA.get(0)));
-        listeArticles.add(new Article("eau de source","oS",54763252,100,Article.MAP_TVA.get(0)));
-        listeArticles.add(new Article("Ordinateur portable Atus","CompPAtus",53243252,140000,Article.MAP_TVA.get(1)));
+        listeArticles.put(42315375,new Article("Jus d'orange","juiO",42315375,350,Article.MAP_TVA.get(0)));
+        listeArticles.put(54763252,new Article("eau de source","oS",54763252,100,Article.MAP_TVA.get(0)));
+        listeArticles.put(53243252,new Article("Ordinateur portable Atus","CompPAtus",53243252,140000,Article.MAP_TVA.get(1)));
         // set this in the context
         sce.getServletContext().setAttribute("listeClients", listeClients);
         sce.getServletContext().setAttribute("listeArticles", listeArticles);

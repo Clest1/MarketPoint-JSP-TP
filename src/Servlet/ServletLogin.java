@@ -40,16 +40,6 @@ public class ServletLogin extends HttpServlet {
         return null;
     }
 
-    public static Article searchArticle(HttpServletRequest request){
-        String codeBarre = request.getParameter("codeBarre");
-        ArrayList<Article> listeArticles = (ArrayList<Article>) request.getServletContext().getAttribute("listeArticles");
-        for(Article article : listeArticles){
-            if (codeBarre.equals("" + article.getCodeBarre()) ) {
-                return article;
-            }
-        }
-        return null;
-    }
     public static Panier searchPanier(HttpServletRequest request, String tokenPanier){
         String codeBarre = request.getParameter("codeBarre");
         ArrayList<Panier> listePaniers = (ArrayList<Panier>) request.getServletContext().getAttribute("listePaniers");
