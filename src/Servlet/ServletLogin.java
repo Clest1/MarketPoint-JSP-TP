@@ -44,7 +44,7 @@ public class ServletLogin extends HttpServlet {
         String codeBarre = request.getParameter("codeBarre");
         ArrayList<Panier> listePaniers = (ArrayList<Panier>) request.getServletContext().getAttribute("listePaniers");
         for(Panier panier : listePaniers){
-            if (panier.getToken().equals(tokenPanier) ) {
+            if (panier.getToken().equals(UUID.fromString(tokenPanier))) {
                 return panier;
             }
         }

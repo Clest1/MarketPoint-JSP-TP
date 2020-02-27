@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 @WebServlet("/")
 public class ServletStore extends HttpServlet {
@@ -33,12 +34,16 @@ public class ServletStore extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        // on initialise les valeurs
         String userToken = getCookieValue(request, "tokenUser");
         String panierToken = getCookieValue(request, "tokenPanier");
         Panier userPanier = null;
+        Client user = null;
+        // on cherche l'utilisateur dans la DB
         if(userToken != null) if(ServletLogin.searchClient(request,userToken) != null){
             request.setAttribute("islogged", true);
-            Client user = ServletLogin.searchClient(request,userToken);
+            user = ServletLogin.searchClient(request,userToken);
+            request.setAttribute("user", user);
             if(user.getPanier() != null){
                 panierToken = user.getPanier().toString();
             }
@@ -48,8 +53,46 @@ public class ServletStore extends HttpServlet {
             request.setAttribute("islogged", false);
             // request.getRequestDispatcher( "/connexion.jsp" ).forward( request, response );
         }
-        if(panierToken != null){
-            userPanier = ServletLogin.searchPanier(request,panierToken);
+        // on va faire le traitement du panier
+        ArrayList<Panier> listePaniers = (ArrayList<Panier>) request.getServletContext().getAttribute("listePaniers");
+        if(panierToken != null) if(ServletLogin.searchPanier(request,panierToken) != null) {
+            userPanier = ServletLogin.searchPanier(request, panierToken);
+        }
+        if(userPanier == null){
+            // on va tenter de lier le panier à l'utilisateur
+            int idUser = -1;
+            if(user != null) idUser = user.getId();
+            userPanier = new Panier(idUser);
+            listePaniers.add(userPanier);
+            if(idUser == -1){
+                Cookie cookie = new Cookie("tokenPanier", userPanier.getToken().toString());
+                response.addCookie(cookie);
+            }else{
+                if(user.isAdmin())
+                    user.setPanier(userPanier.getToken());
+                else
+                    request.setAttribute("errorMsg", "Erreur : Vous devez être admin");
+            }
+        }
+        String codeBarrePar = request.getParameter("article");
+        if(codeBarrePar != null) {
+            int codeBarre = Integer.parseInt(request.getParameter("article"));
+            HashMap<Integer, Article> listeArticles = (HashMap<Integer, Article>) getServletContext().getAttribute("listeArticles");
+            switch (request.getParameter("action")) {
+                case "addPanier":
+                    userPanier.add(listeArticles.get(codeBarre));
+                    break;
+                case "removeDB":
+                    listeArticles.remove(codeBarre);
+                    break;
+                default:
+                    break;
+            }
+            ArrayList<Client> listeClients = (ArrayList<Client>) getServletContext().getAttribute("listeClients");
+
+            getServletContext().setAttribute("listeClients",listeClients);
+            getServletContext().setAttribute("listeArticles",listeArticles);
+            getServletContext().setAttribute("listePaniers",listePaniers);
         }
         request.setAttribute("userPanier", userPanier);
         request.getRequestDispatcher("accueil.jsp").forward(request, response);

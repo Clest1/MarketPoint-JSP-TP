@@ -14,6 +14,10 @@ public class Client {
     boolean isAdmin;
     UUID panier;
 
+    public void setPanier(UUID panier) {
+        this.panier = panier;
+    }
+
     public String getPseudo() {
         return pseudo;
     }

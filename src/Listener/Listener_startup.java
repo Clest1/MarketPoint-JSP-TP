@@ -37,7 +37,7 @@ public class Listener_startup implements ServletContextListener,
         ArrayList<Panier> listePaniers = new ArrayList<Panier>();
 
         // fill with values
-        listeClients.add(new Client("Giboulot","Gabriel","Clest1","1234Test"));
+        listeClients.add(new Client("Giboulot","Gabriel","Clest1","1234Test",true));
         listeClients.add(new Client("Tuning","Jacky","Jackytuning","bass"));
         listeClients.add(new Client("test","test","test","test"));
 
