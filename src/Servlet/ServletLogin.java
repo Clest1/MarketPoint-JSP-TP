@@ -1,6 +1,8 @@
 package Servlet;
 
+import Model.Article;
 import Model.Client;
+import Model.Panier;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -14,6 +16,40 @@ import java.util.UUID;
 
 @WebServlet("/login")
 public class ServletLogin extends HttpServlet {
+
+    public static Client searchClient(HttpServletRequest request, String token){
+        String pseudo = request.getParameter("pseudo");
+        String password = request.getParameter("password");
+        ArrayList<Client> listeClients = (ArrayList<Client>) request.getServletContext().getAttribute("listeClients");
+        for(Client client : listeClients){
+            if ((client.getPseudo().equals(pseudo) && client.isPsswrdSame(password)) || client.isTokenSame(token)) {
+                return client;
+            }
+        }
+        return null;
+    }
+
+    public static Article searchArticle(HttpServletRequest request){
+        String codeBarre = request.getParameter("codeBarre");
+        ArrayList<Article> listeArticles = (ArrayList<Article>) request.getServletContext().getAttribute("listeArticles");
+        for(Article article : listeArticles){
+            if (codeBarre.equals("" + article.getCodeBarre()) ) {
+                return article;
+            }
+        }
+        return null;
+    }
+    public static Panier searchPanier(HttpServletRequest request, String tokenPanier){
+        String codeBarre = request.getParameter("codeBarre");
+        ArrayList<Panier> listePaniers = (ArrayList<Panier>) request.getServletContext().getAttribute("listePaniers");
+        for(Panier panier : listePaniers){
+            if (panier.getToken().equals(tokenPanier) ) {
+                return panier;
+            }
+        }
+        return null;
+    }
+
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String pseudo = request.getParameter("pseudo");
         String password = request.getParameter("password");
@@ -30,7 +66,7 @@ public class ServletLogin extends HttpServlet {
                 Cookie cookie = new Cookie("tokenUser", randomUUIDString);
                 response.addCookie(cookie);
                 request.setAttribute("islogged", true);
-                this.getServletContext().getRequestDispatcher("/accueil.jsp").forward(request, response);
+                this.getServletContext().getRequestDispatcher("/accueil").forward(request, response);
                 return;
             }
         }

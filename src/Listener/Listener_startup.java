@@ -2,6 +2,7 @@ package Listener;
 
 import Model.Article;
 import Model.Client;
+import Model.Panier;
 
 import javax.naming.Context;
 import javax.servlet.ServletContextEvent;
@@ -32,6 +33,7 @@ public class Listener_startup implements ServletContextListener,
         // init the values
         ArrayList<Client> listeClients = new ArrayList<Client>();
         ArrayList<Article> listeArticles = new ArrayList<Article>();
+        ArrayList<Panier> listePaniers = new ArrayList<Panier>();
         // fill with values
         listeClients.add(new Client("Giboulot","Gabriel","Clest1","1234Test"));
         listeClients.add(new Client("Tuning","Jacky","Jackytuning","bass"));
@@ -43,6 +45,7 @@ public class Listener_startup implements ServletContextListener,
         // set this in the context
         sce.getServletContext().setAttribute("listeClients", listeClients);
         sce.getServletContext().setAttribute("listeArticles", listeArticles);
+        sce.getServletContext().setAttribute("listePaniers", listePaniers);
     }
 
     public void contextDestroyed(ServletContextEvent sce) {

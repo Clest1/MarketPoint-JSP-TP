@@ -18,7 +18,7 @@
     <input type="text" dataSource="client.pseudo" id="pseudo" name="pseudo"/><br/>
     <label for="password"> Mot de passe </label>
     <input type="password" dataSource="client.motDePasse" id="password" name="password"/>
-    <input type="submit" type="submit" />
+    <input type="submit" />
 </form>
 </body>
 </html>

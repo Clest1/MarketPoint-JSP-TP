@@ -1,5 +1,9 @@
 package Servlet;
 
+import Model.Article;
+import Model.Client;
+import Model.Panier;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.Cookie;
@@ -7,6 +11,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.ArrayList;
 
 @WebServlet("/")
 public class ServletStore extends HttpServlet {
@@ -29,12 +34,23 @@ public class ServletStore extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String userToken = getCookieValue(request, "tokenUser");
-        if(userToken != null){
+        String panierToken = getCookieValue(request, "tokenPanier");
+        Panier userPanier = null;
+        if(userToken != null) if(ServletLogin.searchClient(request,userToken) != null){
             request.setAttribute("islogged", true);
-            request.getRequestDispatcher("accueil.jsp").forward(request, response);
+            Client user = ServletLogin.searchClient(request,userToken);
+            panierToken = user.getPanier().toString();
+            request.setAttribute("user", user);
+            // request.getRequestDispatcher("accueil.jsp").forward(request, response);
         }else{
             request.setAttribute("islogged", false);
-            this.getServletContext().getRequestDispatcher( "/connexion.jsp" ).forward( request, response );
+            // request.getRequestDispatcher( "/connexion.jsp" ).forward( request, response );
         }
+        if(panierToken != null){
+            userPanier = ServletLogin.searchPanier(request,panierToken);
+        }
+        request.setAttribute("userPanier", userPanier);
+        request.setAttribute("listesArticles", (ArrayList<Article>) request.getServletContext().getAttribute("listeArticles"));
+        request.getRequestDispatcher("accueil.jsp").forward(request, response);
     }
 }

@@ -12,7 +12,7 @@ public class Client {
     int id;
     UUID token;
     boolean isAdmin;
-    Panier panier;
+    UUID panier;
 
     public String getPseudo() {
         return pseudo;
@@ -30,7 +30,7 @@ public class Client {
         return id;
     }
 
-    public Panier getPanier() {
+    public UUID getPanier() {
         return panier;
     }
 
@@ -39,7 +39,9 @@ public class Client {
     }
 
     public boolean isTokenSame(String token) {
-        return this.token.toString() == token;
+        if(token != null && this.token != null)
+            return this.token.toString() == token;
+        return false;
     }
 
     public boolean isPsswrdSame(String motDePasse) {
@@ -58,7 +60,7 @@ public class Client {
         pseudo = "XXXXX";
         motDePasse = "XXXXX";
         isAdmin = false;
-        panier = new Panier(id);
+        panier = null;
     }
 
     @Override

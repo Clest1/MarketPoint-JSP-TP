@@ -6,8 +6,7 @@ import java.util.List;
 import java.util.Map;
 
 public class Article {
-    private int prixHT,tauxTVA;
-    private long codeBarre;
+    private int prixHT,tauxTVA,codeBarre;
     private String reference,libelle;
     public static final ArrayList<Integer> MAP_TVA = new ArrayList<>(Arrays.asList(550,2000));
 
@@ -17,7 +16,7 @@ public class Article {
     public int getTauxTVA() {
         return tauxTVA;
     }
-    public long getCodeBarre() {
+    public int getCodeBarre() {
         return codeBarre;
     }
     public String getReference() {
@@ -27,7 +26,7 @@ public class Article {
         return libelle;
     }
 
-    public Article( String libelle, String reference, long codeBarre, int prixHT, int tauxTVA) {
+    public Article( String libelle, String reference, int codeBarre, int prixHT, int tauxTVA) {
         this.prixHT = prixHT;
         this.tauxTVA = tauxTVA;
         this.codeBarre = codeBarre;
