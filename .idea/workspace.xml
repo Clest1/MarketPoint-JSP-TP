@@ -8,14 +8,7 @@
   <component name="ChangeListManager">
     <list default="true" id="6e75d343-1450-492c-9402-5a142e850456" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MarketPoint-JSP-TP/.gitattributes" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MarketPoint-JSP-TP/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MarketPoint-JSP-TP/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/MarketPoint_JSP_TP_war_exploded/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/MarketPoint_JSP_TP_war_exploded/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Listener/Listener_startup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Listener/Listener_startup.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Servlet/ServletLogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Servlet/ServletLogin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Servlet/ServletStore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Servlet/ServletStore.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/accueil.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/accueil.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Article.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Article.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -170,7 +163,7 @@
       <workItem from="1582711785459" duration="17182000" />
       <workItem from="1582732313450" duration="486000" />
       <workItem from="1582732829770" duration="798000" />
-      <workItem from="1582787745808" duration="13631000" />
+      <workItem from="1582787745808" duration="13826000" />
     </task>
     <task id="LOCAL-00001" summary="Mise en place du projet">
       <created>1582712044529</created>
@@ -277,7 +270,14 @@
       <option name="project" value="LOCAL" />
       <updated>1582799991858</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Ajout de la liste des articles et mise en place du map remplaçant le array">
+      <created>1582801488362</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1582801488362</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -290,7 +290,8 @@
     <MESSAGE value="Mise en place de l'authentification par token" />
     <MESSAGE value="Mise en place des transfert d'info vers JSP" />
     <MESSAGE value="Réparation déconnexion et renforcement connexion" />
-    <option name="LAST_COMMIT_MESSAGE" value="Réparation déconnexion et renforcement connexion" />
+    <MESSAGE value="Ajout de la liste des articles et mise en place du map remplaçant le array" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ajout de la liste des articles et mise en place du map remplaçant le array" />
   </component>
   <component name="WindowStateProjectService">
     <state x="392" y="91" key="#Project_Structure" timestamp="1582711347681">
@@ -317,10 +318,10 @@
       <screen x="62" y="0" width="1474" height="864" />
     </state>
     <state x="530" y="179" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/62.0.1474.864@62.0.1474.864" timestamp="1582713809319" />
-    <state x="423" y="0" key="CommitChangelistDialog2" timestamp="1582799990882">
+    <state x="423" y="0" key="CommitChangelistDialog2" timestamp="1582801487201">
       <screen x="62" y="0" width="1474" height="864" />
     </state>
-    <state x="423" y="0" key="CommitChangelistDialog2/62.0.1474.864@62.0.1474.864" timestamp="1582799990882" />
+    <state x="423" y="0" key="CommitChangelistDialog2/62.0.1474.864@62.0.1474.864" timestamp="1582801487201" />
     <state x="580" y="187" key="FileChooserDialogImpl" timestamp="1582722013084">
       <screen x="62" y="0" width="1474" height="864" />
     </state>

@@ -35,6 +35,6 @@ public class Article {
     }
 
     public float getPrixTTC(){
-        return prixHT*tauxTVA/100;
+        return (prixHT+prixHT*tauxTVA/10000)/100;
     }
 }
