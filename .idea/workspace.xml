@@ -328,9 +328,10 @@
       <screen x="62" y="0" width="1474" height="864" />
     </state>
     <state x="530" y="179" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/62.0.1474.864@62.0.1474.864" timestamp="1582713809319" />
-    <state x="423" y="0" key="CommitChangelistDialog2" timestamp="1582801487201">
-      <screen x="62" y="0" width="1474" height="864" />
+    <state x="353" y="0" key="CommitChangelistDialog2" timestamp="1582806484102">
+      <screen x="0" y="0" width="1440" height="900" />
     </state>
+    <state x="353" y="0" key="CommitChangelistDialog2/0.0.1440.900@0.0.1440.900" timestamp="1582806484102" />
     <state x="423" y="0" key="CommitChangelistDialog2/62.0.1474.864@62.0.1474.864" timestamp="1582801487201" />
     <state x="580" y="187" key="FileChooserDialogImpl" timestamp="1582722013084">
       <screen x="62" y="0" width="1474" height="864" />
