@@ -1,6 +1,7 @@
 package Servlet;
 
 import Model.Client;
+import Model.Panier;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -12,7 +13,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.UUID;
 
-@WebServlet(name = "delog")
+@WebServlet("/delog")
 public class ServletDelog extends HttpServlet {
 
     private static String getCookieValue( HttpServletRequest request, String nom ) {
@@ -40,22 +41,15 @@ public class ServletDelog extends HttpServlet {
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        ArrayList<Client> listeClients = (ArrayList<Client>) getServletContext().getAttribute("listeClients");
-        String userToken = getCookieValue(request, "tokenUser");
-        for(Client client : listeClients) {
-            if(client.isTokenSame(userToken)) {
-                // on retire le token du cookie du user
-                Cookie cookie = new Cookie("tokenUser", null);
-                cookie.setMaxAge(0);
-                response.addCookie(cookie);
-                request.setAttribute("islogged", false);
-                this.getServletContext().getRequestDispatcher("/accueil.jsp").forward(request, response);
-                return;
-            }
-        }
+
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+        Cookie cookie = new Cookie("tokenUser", null);
+        cookie.setMaxAge(0);
+        response.addCookie(cookie);
+        request.setAttribute("islogged", false);
+        String userToken = getCookieValue(request, "tokenUser");
+        response.sendRedirect( (String) getServletContext().getAttribute("routeBase"));
     }
 }

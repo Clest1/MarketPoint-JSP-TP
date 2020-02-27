@@ -46,6 +46,9 @@ public class Listener_startup implements ServletContextListener,
         sce.getServletContext().setAttribute("listeClients", listeClients);
         sce.getServletContext().setAttribute("listeArticles", listeArticles);
         sce.getServletContext().setAttribute("listePaniers", listePaniers);
+        // variable global
+        sce.getServletContext().setAttribute("routeBase", "/MarketPoint_JSP_TP_war_exploded");
+
     }
 
     public void contextDestroyed(ServletContextEvent sce) {

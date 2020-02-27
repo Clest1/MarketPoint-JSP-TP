@@ -39,7 +39,9 @@ public class ServletStore extends HttpServlet {
         if(userToken != null) if(ServletLogin.searchClient(request,userToken) != null){
             request.setAttribute("islogged", true);
             Client user = ServletLogin.searchClient(request,userToken);
-            panierToken = user.getPanier().toString();
+            if(user.getPanier() != null){
+                panierToken = user.getPanier().toString();
+            }
             request.setAttribute("user", user);
             // request.getRequestDispatcher("accueil.jsp").forward(request, response);
         }else{
@@ -50,7 +52,7 @@ public class ServletStore extends HttpServlet {
             userPanier = ServletLogin.searchPanier(request,panierToken);
         }
         request.setAttribute("userPanier", userPanier);
-        request.setAttribute("listesArticles", (ArrayList<Article>) request.getServletContext().getAttribute("listeArticles"));
+        request.setAttribute("listesArticles", getServletContext().getAttribute("listeArticles"));
         request.getRequestDispatcher("accueil.jsp").forward(request, response);
     }
 }

@@ -7,8 +7,8 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <nav>
-    <a href="">Index</a>
-    <% boolean islogged = (boolean) request.getAttribute( "islogged" );
+    <a href="<%=  (String) request.getServletContext().getAttribute("routeBase")%>">Index</a>
+    <% boolean islogged = (boolean) (request.getAttribute( "islogged" ) == null? false : request.getAttribute( "islogged" ));
         Client user = (Client) request.getAttribute( "user" );
     if(islogged){ %>
         <a href="delog">Déconnexion</a>
@@ -19,3 +19,4 @@
         <a href="login">Connexion</a><a href="register">Inscription</a>
     <% } %>
 </nav>
+<div>${errorMsg}</div>

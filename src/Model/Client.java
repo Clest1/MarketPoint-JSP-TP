@@ -38,9 +38,13 @@ public class Client {
         return isAdmin;
     }
 
+    public UUID getToken() {
+        return token;
+    }
+
     public boolean isTokenSame(String token) {
         if(token != null && this.token != null)
-            return this.token.toString() == token;
+            return this.token.equals(UUID.fromString(token));
         return false;
     }
 

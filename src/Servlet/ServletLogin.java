@@ -17,12 +17,23 @@ import java.util.UUID;
 @WebServlet("/login")
 public class ServletLogin extends HttpServlet {
 
+
+    private static String getCookieValue( HttpServletRequest request, String nom ) {
+        Cookie[] cookies = request.getCookies();
+        if ( cookies != null ) {
+            for ( Cookie cookie : cookies ) {
+                if ( cookie != null && nom.equals( cookie.getName() ) ) {
+                    return cookie.getValue();
+                }
+            }
+        }
+        return null;
+    }
+
     public static Client searchClient(HttpServletRequest request, String token){
-        String pseudo = request.getParameter("pseudo");
-        String password = request.getParameter("password");
         ArrayList<Client> listeClients = (ArrayList<Client>) request.getServletContext().getAttribute("listeClients");
         for(Client client : listeClients){
-            if ((client.getPseudo().equals(pseudo) && client.isPsswrdSame(password)) || client.isTokenSame(token)) {
+            if (client.isTokenSame(token)) {
                 return client;
             }
         }
@@ -66,7 +77,8 @@ public class ServletLogin extends HttpServlet {
                 Cookie cookie = new Cookie("tokenUser", randomUUIDString);
                 response.addCookie(cookie);
                 request.setAttribute("islogged", true);
-                this.getServletContext().getRequestDispatcher("/accueil").forward(request, response);
+                response.sendRedirect( (String) getServletContext().getAttribute("routeBase"));
+                //this.getServletContext().getRequestDispatcher("/accueil.jsp").forward(request, response);
                 return;
             }
         }

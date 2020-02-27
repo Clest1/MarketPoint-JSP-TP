@@ -7,8 +7,8 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <div>
-    <h4>${article.getLibelle()}</h4><br/>
-    <p>${article.getReference()}</p><br/>
-    <p>${article.getCodeBarre()}</p><br/>
-    <p>${article.getPrixTTC()}</p>
+    <h4>libelle : ${article.getLibelle()}</h4><br/>
+    <p>Ref : ${article.getReference()}</p><br/>
+    <p>CB : ${article.getCodeBarre()}</p><br/>
+    <p>prixTTC : ${article.getPrixTTC()}€</p>
 </div>

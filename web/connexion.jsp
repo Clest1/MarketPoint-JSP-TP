@@ -12,7 +12,7 @@
 </head>
 <body>
 <jsp:include page="navBar.jsp"></jsp:include>
-<div>${errorMsg}</div>
+
 <form action="login" method="POST">
     <label for="pseudo"> Pseudonyme </label>
     <input type="text" dataSource="client.pseudo" id="pseudo" name="pseudo"/><br/>

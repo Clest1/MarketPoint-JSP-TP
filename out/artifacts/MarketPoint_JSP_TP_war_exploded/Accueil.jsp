@@ -1,4 +1,6 @@
-<%--
+<%@ page import="Model.Client" %>
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="Model.Article" %><%--
   Created by IntelliJ IDEA.
   User: Gabriel
   Date: 26/02/2020
@@ -13,5 +15,13 @@
 <body>
 <jsp:include page="navBar.jsp"></jsp:include>
     <div>ACCUEIL</div>
+<h2>Liste articles</h2>
+<%
+    Client userConnected = (Client) request.getAttribute( "user" );
+    ArrayList<Article> listeArticles = (ArrayList<Article>) request.getAttribute( "listeArticles" );
+%>
+<c:forEach items="${listeArticles}" var="article">
+    <jsp:include page="article.jsp"></jsp:include>
+</c:forEach>
 </body>
 </html>
