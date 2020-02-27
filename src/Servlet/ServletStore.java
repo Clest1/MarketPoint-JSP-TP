@@ -75,17 +75,18 @@ public class ServletStore extends HttpServlet {
             }
         }
         String codeBarrePar = request.getParameter("article");
-        if(codeBarrePar != null) {
+        String action = request.getParameter("action");
+        if(codeBarrePar != null && action != null) {
             int codeBarre = Integer.parseInt(request.getParameter("article"));
             HashMap<Integer, Article> listeArticles = (HashMap<Integer, Article>) getServletContext().getAttribute("listeArticles");
-            switch (request.getParameter("action")) {
+            switch (action) {
                 case "addPanier":
                     userPanier.add(listeArticles.get(codeBarre));
                     break;
-                case "adelPanier":
-                    String indexPar = request.getParameter("article");
+                case "delPanier":
+                    String indexPar = request.getParameter("articleInd");
                     if(indexPar != null) {
-                        int index = Integer.parseInt(request.getParameter("indexPar"));
+                        int index = Integer.parseInt(indexPar);
                         if (index < userPanier.size() && index >= 0){
                             userPanier.remove(index);
                         }
@@ -97,11 +98,6 @@ public class ServletStore extends HttpServlet {
                 default:
                     break;
             }
-            ArrayList<Client> listeClients = (ArrayList<Client>) getServletContext().getAttribute("listeClients");
-
-            getServletContext().setAttribute("listeClients",listeClients);
-            getServletContext().setAttribute("listeArticles",listeArticles);
-            getServletContext().setAttribute("listePaniers",listePaniers);
         }
         request.setAttribute("userPanier", userPanier);
         request.getRequestDispatcher("accueil.jsp").forward(request, response);

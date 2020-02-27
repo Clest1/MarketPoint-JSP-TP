@@ -38,7 +38,7 @@
         </td>
         <td><%=article.getCodeBarre()%>
         </td>
-        <td><%=article.getPrixHT()%>
+        <td><%=article.getPrixHT()/100.0%>
         </td>
         <td><%=article.getPrixTTC()%>€</td>
         <td>
@@ -77,10 +77,10 @@
         </td>
         <td><%=article.getCodeBarre()%>
         </td>
-        <td><%=article.getPrixHT()%>
+        <td><%=article.getPrixHT()/100.0%>
         </td>
         <td><%=article.getPrixTTC()%>€</td>
-        <td><a href="<%=  (String) request.getServletContext().getAttribute("routeBase")%>?articleInd=<%=index++%>&action=delPanier" class="btn btn-primary">-</a></td>
+        <td><a href="<%=(String) request.getServletContext().getAttribute("routeBase")%>?article=<%=article.getCodeBarre()%>&articleInd=<%=index++%>&action=delPanier" class="btn btn-primary">-</a></td>
     </tr>
     <% }} %>
     </tbody>

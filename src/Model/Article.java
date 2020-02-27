@@ -34,7 +34,8 @@ public class Article {
         this.libelle = libelle;
     }
 
-    public float getPrixTTC(){
-        return (prixHT+prixHT*tauxTVA/10000)/100;
+    public double getPrixTTC(){
+        // permet d'avoir un arrondis au centième
+        return Math.round(prixHT+prixHT*tauxTVA/10000.0)/100.0;
     }
 }

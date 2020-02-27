@@ -13,7 +13,8 @@
 </head>
 <body>
 <jsp:include page="navBar.jsp"></jsp:include>
-<table class="table" style="width: 80%; ">
+<h1 style="margin-top: 30px; margin-left: 30px;">Liste des articles disponibles : </h1>
+<table class="table" style="width: 80%; margin-top: 30px; margin-left: 30px; ">
     <thead class="thead-dark">
     <tr>
         <th scope="col">Libellé</th>
@@ -37,7 +38,7 @@
         </td>
         <td><%=article.getCodeBarre()%>
         </td>
-        <td><%=article.getPrixHT()%>
+        <td><%=article.getPrixHT()/100.0%>
         </td>
         <td><%=article.getPrixTTC()%>€</td>
         <td>
@@ -76,10 +77,10 @@
         </td>
         <td><%=article.getCodeBarre()%>
         </td>
-        <td><%=article.getPrixHT()%>
+        <td><%=article.getPrixHT()/100.0%>
         </td>
         <td><%=article.getPrixTTC()%>€</td>
-        <td><a href="<%=  (String) request.getServletContext().getAttribute("routeBase")%>?articleInd=<%=index++%>&action=delPanier" class="btn btn-primary">-</a></td>
+        <td><a href="<%=(String) request.getServletContext().getAttribute("routeBase")%>?article=<%=article.getCodeBarre()%>&articleInd=<%=index++%>&action=delPanier" class="btn btn-primary">-</a></td>
     </tr>
     <% }} %>
     </tbody>

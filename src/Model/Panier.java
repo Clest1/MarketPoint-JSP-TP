@@ -28,11 +28,12 @@ public class Panier extends ArrayList<Article> {
         this.token = UUID.randomUUID();
     }
 
-    public float totalValeur(){
+    public double totalValeur(){
         float total = 0;
         for(Article article : this) {
             total += article.getPrixTTC();
         }
-        return total;
+        // permet d'avoir un arrondis au centième
+        return  Math.round(total*100)/100.0;
     }
 }
