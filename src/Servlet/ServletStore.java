@@ -82,6 +82,15 @@ public class ServletStore extends HttpServlet {
                 case "addPanier":
                     userPanier.add(listeArticles.get(codeBarre));
                     break;
+                case "adelPanier":
+                    String indexPar = request.getParameter("article");
+                    if(indexPar != null) {
+                        int index = Integer.parseInt(request.getParameter("indexPar"));
+                        if (index < userPanier.size() && index >= 0){
+                            userPanier.remove(index);
+                        }
+                    }
+                    break;
                 case "removeDB":
                     listeArticles.remove(codeBarre);
                     break;

@@ -67,6 +67,7 @@
     </thead>
     <tbody>
     <%  if(panierUser != null){
+        int index = 0;
         for (Article article : panierUser) { %>
     <tr>
         <td><%=article.getLibelle()%>
@@ -78,7 +79,7 @@
         <td><%=article.getPrixHT()%>
         </td>
         <td><%=article.getPrixTTC()%>€</td>
-        <td><a href="<%=  (String) request.getServletContext().getAttribute("routeBase")%>?article=<%=article.getCodeBarre()%>&action=delPanier" class="btn btn-primary">-</a></td>
+        <td><a href="<%=  (String) request.getServletContext().getAttribute("routeBase")%>?articleInd=<%=index++%>&action=delPanier" class="btn btn-primary">-</a></td>
     </tr>
     <% }} %>
     </tbody>

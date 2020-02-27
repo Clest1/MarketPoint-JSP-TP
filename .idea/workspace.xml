@@ -8,9 +8,7 @@
   <component name="ChangeListManager">
     <list default="true" id="6e75d343-1450-492c-9402-5a142e850456" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Listener/Listener_startup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Listener/Listener_startup.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Servlet/ServletLogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Servlet/ServletLogin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/MarketPoint_JSP_TP_war_exploded/Accueil.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/MarketPoint_JSP_TP_war_exploded/Accueil.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Servlet/ServletStore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Servlet/ServletStore.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/accueil.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/accueil.jsp" afterDir="false" />
     </list>
@@ -281,7 +279,14 @@
       <option name="project" value="LOCAL" />
       <updated>1582801488362</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Mise en place du système de panier avec stockage et actualisation de la DB">
+      <created>1582811364977</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1582811364977</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -295,7 +300,8 @@
     <MESSAGE value="Mise en place des transfert d'info vers JSP" />
     <MESSAGE value="Réparation déconnexion et renforcement connexion" />
     <MESSAGE value="Ajout de la liste des articles et mise en place du map remplaçant le array" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ajout de la liste des articles et mise en place du map remplaçant le array" />
+    <MESSAGE value="Mise en place du système de panier avec stockage et actualisation de la DB" />
+    <option name="LAST_COMMIT_MESSAGE" value="Mise en place du système de panier avec stockage et actualisation de la DB" />
   </component>
   <component name="WindowStateProjectService">
     <state x="392" y="91" key="#Project_Structure" timestamp="1582711347681">
@@ -322,10 +328,10 @@
       <screen x="62" y="0" width="1474" height="864" />
     </state>
     <state x="530" y="179" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/62.0.1474.864@62.0.1474.864" timestamp="1582713809319" />
-    <state x="423" y="0" key="CommitChangelistDialog2" timestamp="1582801487201">
+    <state x="423" y="0" key="CommitChangelistDialog2" timestamp="1582811363934">
       <screen x="62" y="0" width="1474" height="864" />
     </state>
-    <state x="423" y="0" key="CommitChangelistDialog2/62.0.1474.864@62.0.1474.864" timestamp="1582801487201" />
+    <state x="423" y="0" key="CommitChangelistDialog2/62.0.1474.864@62.0.1474.864" timestamp="1582811363934" />
     <state x="580" y="187" key="FileChooserDialogImpl" timestamp="1582722013084">
       <screen x="62" y="0" width="1474" height="864" />
     </state>
@@ -382,10 +388,14 @@
       <screen x="62" y="0" width="1474" height="864" />
     </state>
     <state x="280" y="7" key="SettingsEditor/62.0.1474.864@62.0.1474.864" timestamp="1582732885553" />
-    <state x="392" y="165" key="Vcs.Push.Dialog.v2" timestamp="1582799994461">
+    <state x="586" y="66" key="VCS.ChangeListViewerDialog" timestamp="1582811377137">
       <screen x="62" y="0" width="1474" height="864" />
     </state>
-    <state x="392" y="165" key="Vcs.Push.Dialog.v2/62.0.1474.864@62.0.1474.864" timestamp="1582799994461" />
+    <state x="586" y="66" key="VCS.ChangeListViewerDialog/62.0.1474.864@62.0.1474.864" timestamp="1582811377137" />
+    <state x="392" y="165" key="Vcs.Push.Dialog.v2" timestamp="1582811366604">
+      <screen x="62" y="0" width="1474" height="864" />
+    </state>
+    <state x="392" y="165" key="Vcs.Push.Dialog.v2/62.0.1474.864@62.0.1474.864" timestamp="1582811366604" />
     <state x="609" y="349" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1582799924372">
       <screen x="62" y="0" width="1474" height="864" />
     </state>
