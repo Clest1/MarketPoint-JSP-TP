@@ -14,7 +14,7 @@
 <body>
 <jsp:include page="navBar.jsp"></jsp:include>
 <div style="margin-left: 30px; margin-top: 30px;">
-    <h1>Connexion administrateur : </h1><br>
+    <h1>Connexion : </h1><br>
 
     <form  action="login" method="POST" style=" width: 300px;">
         <div class="form-group">
@@ -27,7 +27,7 @@
         </div>
         <button type="submit" class="btn btn-primary">Connexion</button>
     </form>
-    <p> La connexion en tant qu'administrateur permet de modifier, ajouter ou supprimer un article.</p>
+    <p> L'inscription en tant que client permet de sauvegarder en ligne son panier, le modifier, ajouter ou supprimer un article.</p>
 </div>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 </body>

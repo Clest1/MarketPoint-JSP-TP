@@ -16,7 +16,7 @@
 <jsp:include page="navBar.jsp"></jsp:include>
 
 <div style="margin-left: 30px; margin-top: 30px;">
-    <h1>Inscription administrateur : </h1><br>
+    <h1>Inscription client : </h1><br>
 
     <form  action="login" method="POST" style=" width: 300px;">
         <div class="form-group">
@@ -37,7 +37,7 @@
         </div>
         <button type="submit" class="btn btn-primary">Inscription</button>
     </form>
-    <p> L'inscription en tant qu'administrateur permet de modifier, ajouter ou supprimer un article.</p>
+    <p>Il est possible de vous inscrire afin de sauvegarder votre panier.</p>
 </div>
 
 

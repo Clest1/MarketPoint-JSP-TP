@@ -8,8 +8,9 @@
   <component name="ChangeListManager">
     <list default="true" id="6e75d343-1450-492c-9402-5a142e850456" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Servlet/ServletStore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Servlet/ServletStore.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/accueil.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/accueil.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/MarketPoint_JSP_TP_war_exploded/inscription.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/MarketPoint_JSP_TP_war_exploded/inscription.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/connexion.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/connexion.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/inscription.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/inscription.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -341,7 +342,14 @@
       <option name="project" value="LOCAL" />
       <updated>1582813622779</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="Créations d'articles dans la base de données interne">
+      <created>1582815446493</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1582815446493</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -358,7 +366,8 @@
     <MESSAGE value="Mise en place du système de panier avec stockage et actualisation de la DB" />
     <MESSAGE value="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;out/artifacts/MarketPoint_JSP_TP_war_exploded/Accueil.jsp" />
     <MESSAGE value="Suppression des items dans le panier" />
-    <option name="LAST_COMMIT_MESSAGE" value="Suppression des items dans le panier" />
+    <MESSAGE value="Créations d'articles dans la base de données interne" />
+    <option name="LAST_COMMIT_MESSAGE" value="Créations d'articles dans la base de données interne" />
   </component>
   <component name="WindowStateProjectService">
     <state x="400" y="91" key="#Deployment" timestamp="1582812049011">
