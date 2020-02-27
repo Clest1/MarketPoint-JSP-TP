@@ -13,14 +13,22 @@
 </head>
 <body>
 <jsp:include page="navBar.jsp"></jsp:include>
+<div style="margin-left: 30px; margin-top: 30px;">
+    <h1>Connexion administrateur : </h1><br>
 
-<form action="login" method="POST">
-    <label for="pseudo"> Pseudonyme </label>
-    <input type="text" dataSource="client.pseudo" id="pseudo" name="pseudo"/><br/>
-    <label for="password"> Mot de passe </label>
-    <input type="password" dataSource="client.motDePasse" id="password" name="password"/>
-    <input type="submit" />
-</form>
+    <form  action="login" method="POST" style=" width: 300px;">
+        <div class="form-group">
+            <label for="pseudo"> Pseudonyme : </label>
+            <input type="text" class="form-control" dataSource="client.pseudo" id="pseudo" name="pseudo"/>
+        </div>
+        <div class="form-group">
+            <label for="password"> Mot de passe : </label>
+            <input type="password" class="form-control" dataSource="client.motDePasse" id="password" name="password">
+        </div>
+        <button type="submit" class="btn btn-primary">Connexion</button>
+    </form>
+    <p> La connexion en tant qu'administrateur permet de modifier, ajouter ou supprimer un article.</p>
+</div>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 </body>
 </html>
